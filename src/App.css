@@ -2,15 +2,16 @@
   margin: 0px auto;
   text-align: center;
   width: 440px;
-  height: 330px;
 }
 
 .table {
-  width: 400px;
+  width: 411px;
   margin: 0px auto;
   margin-top: 20px;
   border: 15px solid grey;
   border-radius: 10px;
+  height: 330px;
+  overflow: scroll;
 }
 
 .head .box {
@@ -33,4 +34,8 @@
 
 .row {
   display: flex;
+  width: 100%;
+}
+.body {
+  width: 100%;
 }
