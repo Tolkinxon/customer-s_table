@@ -15,6 +15,10 @@ function App() {
     createData('cherry', 500, 0.9, 4, 1),
     createData('banana', 100, 5.9, 3, 0),
     createData('potatoes', 300, 9.7, 3, 1),
+    createData('potatoes', 300, 9.7, 3, 1),
+
+    createData('potatoes', 300, 9.7, 3, 1),
+
   ]
 
   return (
