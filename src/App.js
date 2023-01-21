@@ -21,7 +21,6 @@ function App() {
     createData('rice', 180, 9.9, 65),
     createData('cabbage', 144, 9.6, 39),
     createData('onion', 670, 89, 35),
-
   ]
 
   return (
@@ -32,7 +31,7 @@ function App() {
             <Box>Products</Box>
             <Box>Amount of products</Box>
             <Box>Protein</Box>
-            <Box>Storage of period</Box>
+            <Box>Period of storage</Box>
           </TableRow>
         </TableHead>
         <TableBody>
