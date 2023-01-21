@@ -1,0 +1,80 @@
+{
+  "item": [
+    {
+      "name": "apple",
+      "amount": 200,
+      "protein": 0.4,
+      "storage_period": 6,
+      "id": 1
+    },
+    {
+      "name": "cherry",
+      "amount": 500,
+      "protein": 0.9,
+      "storage_period": 4,
+      "id": 2
+    },
+    {
+      "name": "banana",
+      "amount": 100,
+      "protein": 5.9,
+      "storage_period": 3,
+      "id": 3
+    },
+    {
+      "name": "potatoes",
+      "amount": 300,
+      "protein": 9.7,
+      "storage_period":3,
+      "id": 3
+    },
+    {
+      "name": "carrot",
+      "amount": 780,
+      "protein": 2.5,
+      "storage_period": 5,
+      "id": 3
+    },
+    {
+      "name": "pie",
+      "amount": 287,
+      "protein": 1.59,
+      "storage_period": 9,
+      "id": 2
+    },
+    {
+      "name": "tea",
+      "amount": 65,
+      "protein": 9.08,
+      "storage_period": 12,
+      "id": 4
+    },
+    {
+      "name": "rice",
+      "amount": 67,
+      "protein": 905,
+      "storage_period": 5,
+      "id": 45
+    },
+    {
+      "name": "cabbage",
+      "amount": 532,
+      "protein": 9.87,
+      "storage_period": 43,
+      "id": 31
+    },
+    {
+      "name": "onion",
+      "amount": 426,
+      "protein": 87,
+      "storage_period":26,
+      "id": 373
+    }
+  ]
+}
+
+
+
+
+
+
