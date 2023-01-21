@@ -1,8 +1,8 @@
-import Table from './Table'
-import TableHead from './TableHead'
-import TableBody from './TableBody'
-import TableRow from './TableRow'
-import Box from './Box'
+import Table from './components/Table'
+import TableHead from './components/TableHead'
+import TableBody from './components/TableBody'
+import TableRow from './components/TableRow'
+import Box from './components/Box'
 import './App.css'
 
 function App() {
