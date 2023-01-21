@@ -1,4 +1,4 @@
-import './App.css'
+import '../App.css'
 
 export default function TableRow({ id, children }) {
     if(id % 2 == 1){
