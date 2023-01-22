@@ -1,17 +1,20 @@
 import '../App.css'
 import { useState, useEffect } from 'react'
 
-export default function Input({ setData }) {
+export default function Input({ setData, editDataBase, editData }) {
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [protein, setProtein] = useState('')
   const [storage, setStorage] = useState('')
 
   const datas = (e) => {
-   e.target.name == 'name' ? setName(e.target.value) :
-   e.target.name == 'amount' ? setAmount(e.target.value):
-   e.target.name == 'protein' ? setProtein(e.target.value):
-   setStorage(e.target.value)
+    e.target.name == 'name'
+      ? setName(e.target.value)
+      : e.target.name == 'amount'
+      ? setAmount(e.target.value)
+      : e.target.name == 'protein'
+      ? setProtein(e.target.value)
+      : setStorage(e.target.value)
   }
 
   useEffect(() => {
@@ -19,9 +22,17 @@ export default function Input({ setData }) {
     setAmount('')
     setProtein('')
     setStorage('')
-  },[setData])
+  }, [setData])
 
-  
+
+
+
+  useEffect(() => {
+    setName(editData.name)
+    setAmount(editData.amount)
+    setProtein(editData.protein)
+    setStorage(editData.storage)
+  }, [editData])
 
   return (
     <div className="input">
@@ -42,7 +53,12 @@ export default function Input({ setData }) {
         <input name="storage" type="text" value={storage} onChange={datas} />
       </div>
 
-      <button onClick={() => setData(name, amount, protein, storage)}>send</button>
+      <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
+        edit
+      </button>
+      <button onClick={() => setData(name, amount, protein, storage)}>
+        send
+      </button>
     </div>
   )
 }

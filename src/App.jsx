@@ -10,7 +10,17 @@ import { useEffect, useState } from 'react'
 function App() {
   const [data, setData] = useState([])
   const [incr, setIncr] = useState(0)
+  const [editData, setEditData] = useState({
+    name: '',
+    amount: '',
+    protein: '',
+    storage: '',
+  })
 
+
+
+
+  // ******** CREATE DATA BASE *********************
   const handleSubmit = (name, amount, protein, storage) => {
     const bodyData = { name, amount, protein, storage }
 
@@ -31,16 +41,48 @@ function App() {
       })
   }
 
+
+
+
+
+  // ****************** EDIT DATA BASE ****************
+  const edit = function (name, amount, protein, storage, id) {
+    setEditData({ name, amount, protein, storage, id })
+  }
+
+
+
+
+  const editDataBase = (data, id) => {
+    console.log(data, id);
+    setIncr((prev) => prev + 1)
+    fetch(`http://localhost:8000/item/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    .then((data) => data.json())
+  }
+
+
+
+
+
+  // ***************** DELETE DATA BASE *****************
   const delee = (id) => {
     setIncr((prev) => prev + 1)
 
     fetch(`http://localhost:8000/item/${id}`, {
       method: 'DELETE',
     })
-      .then((res) => res.json()) 
-      .then((res) => console.log(res))
   }
 
+
+
+
+
+
+  // ***************** GET REQUEST ****************
   useEffect(() => {
     console.log('render')
     fetch('http://localhost:8000/item')
@@ -48,20 +90,29 @@ function App() {
       .then((data) => setData(data))
   }, [incr])
 
-  console.log(incr);
+  useEffect(() => {
+    console.log('render')
+    fetch('http://localhost:8000/item')
+      .then((data) => data.json())
+      .then((data) => setData(data))
+  }, [])
+
+
+
+
 
   return (
     <>
-      <Input setData={handleSubmit} />
+      <Input setData={handleSubmit} editDataBase={editDataBase} editData={editData} />
       <div className="App">
         <Table>
           <TableHead>
-            <TableRow>
+            <div className='hrow'>
               <Box>Products</Box>
               <Box>Amount of products</Box>
               <Box>Protein</Box>
               <Box>Period of storage</Box>
-            </TableRow>
+            </div>
           </TableHead>
           <TableBody>
             {data.map((row, idx) => (
@@ -70,7 +121,20 @@ function App() {
                 <Box>{row.amount}</Box>
                 <Box>{row.protein}</Box>
                 <Box>{row.storage}</Box>
-                <button onClick={() => {delee(row.id)}}>delete</button>
+                <button
+                  onClick={() => {
+                    edit(row.name, row.amount, row.protein, row.storage, row.id)
+                  }}
+                >
+                  edit
+                </button>
+                <button
+                  onClick={() => {
+                    delee(row.id)
+                  }}
+                >
+                  delete
+                </button>
               </TableRow>
             ))}
           </TableBody>
