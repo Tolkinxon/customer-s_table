@@ -10,22 +10,12 @@ import { useEffect, useState } from 'react'
 function App() {
   const [data, setData] = useState([])
   const [incr, setIncr] = useState(0)
+ 
 
-  // function putData(name, amount, protein, storage_period) {
-  // bodyData = { ...{ name, amount, protein, storage_period }}
-  // }
+  const handleSubmit = (name, amount, protein, storage) => {
+    const bodyData = {name, amount, protein, storage}
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
     setIncr((prev) => prev + 1)
-
-    const bodyData = {
-      name: 'apple',
-      amount: 200,
-      protein: 0.4,
-      storage_period: 6,
-      id: 10
-    }
 
     fetch('http://localhost:8000/item', {
       method: 'POST',
@@ -51,8 +41,7 @@ function App() {
 
   return (
     <>
-      <Input />  
-
+      <Input setData={handleSubmit} />  
       <div className="App">
         <Table>
           <TableHead>
@@ -69,7 +58,7 @@ function App() {
                 <Box>{row.name}</Box>
                 <Box>{row.amount}</Box>
                 <Box>{row.protein}</Box>
-                <Box>{row.storage_period}</Box>
+                <Box>{row.storage}</Box>
               </TableRow>
             ))}
           </TableBody>
