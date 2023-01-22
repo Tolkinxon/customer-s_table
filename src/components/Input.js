@@ -2,8 +2,6 @@ import '../App.css'
 import { useState, useEffect } from 'react'
 
 export default function Input({ setData }) {
-
-
   return (
     <div className="input">
       <div>
@@ -11,7 +9,7 @@ export default function Input({ setData }) {
         <input />
       </div>
       <div>
-        <h4>Amount of products</h4>
+        <h4>Amount of product</h4>
         <input />
       </div>
       <div>
@@ -23,7 +21,7 @@ export default function Input({ setData }) {
         <input />
       </div>
 
-      <button onClick={setData}>POST</button>
+      <button onClick={setData}>send</button>
     </div>
   )
 }
