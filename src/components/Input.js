@@ -25,8 +25,6 @@ export default function Input({ setData, editDataBase, editData }) {
   }, [setData])
 
 
-
-
   useEffect(() => {
     setName(editData.name)
     setAmount(editData.amount)
