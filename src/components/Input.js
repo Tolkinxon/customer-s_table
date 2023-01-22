@@ -14,6 +14,13 @@ export default function Input({ setData }) {
    setStorage(e.target.value)
   }
 
+  useEffect(() => {
+    setName('')
+    setAmount('')
+    setProtein('')
+    setStorage('')
+  },[setData])
+
   
 
   return (

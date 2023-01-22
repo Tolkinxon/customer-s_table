@@ -1,34 +1,6 @@
 {
   "item": [
     {
-      "name": "apple",
-      "amount": 200,
-      "protein": 0.4,
-      "storage": 6,
-      "id": 1
-    },
-    {
-      "name": "cherry",
-      "amount": 500,
-      "protein": 0.9,
-      "storage": 4,
-      "id": 2
-    },
-    {
-      "name": "banana",
-      "amount": 100,
-      "protein": 5.9,
-      "storage": 3,
-      "id": 3
-    },
-    {
-      "name": "potatoes",
-      "amount": 300,
-      "protein": 9.7,
-      "storage": 3,
-      "id": 4
-    },
-    {
       "name": "carrot",
       "amount": 780,
       "protein": 2.5,
@@ -43,13 +15,6 @@
       "id": 6
     },
     {
-      "name": "tea",
-      "amount": 65,
-      "protein": 9.08,
-      "storage": 12,
-      "id": 7
-    },
-    {
       "name": "rice",
       "amount": 67,
       "protein": 905,
@@ -62,27 +27,6 @@
       "protein": 9.87,
       "storage": 43,
       "id": 9
-    },
-    {
-      "name": "onion",
-      "amount": 426,
-      "protein": 87,
-      "storage": 26,
-      "id": 10
-    },
-    {
-      "name": "hello",
-      "amount": "d",
-      "protein": "re",
-      "storage": "fd",
-      "id": 11
-    },
-    {
-      "name": "abdulvoris",
-      "amount": "673",
-      "protein": "909",
-      "storage": "khksad",
-      "id": 12
     }
   ]
 }

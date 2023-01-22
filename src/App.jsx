@@ -10,10 +10,9 @@ import { useEffect, useState } from 'react'
 function App() {
   const [data, setData] = useState([])
   const [incr, setIncr] = useState(0)
- 
 
   const handleSubmit = (name, amount, protein, storage) => {
-    const bodyData = {name, amount, protein, storage}
+    const bodyData = { name, amount, protein, storage }
 
     setIncr((prev) => prev + 1)
 
@@ -32,6 +31,16 @@ function App() {
       })
   }
 
+  const delee = (id) => {
+    setIncr((prev) => prev + 1)
+
+    fetch(`http://localhost:8000/item/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json()) 
+      .then((res) => console.log(res))
+  }
+
   useEffect(() => {
     console.log('render')
     fetch('http://localhost:8000/item')
@@ -39,9 +48,11 @@ function App() {
       .then((data) => setData(data))
   }, [incr])
 
+  console.log(incr);
+
   return (
     <>
-      <Input setData={handleSubmit} />  
+      <Input setData={handleSubmit} />
       <div className="App">
         <Table>
           <TableHead>
@@ -59,6 +70,7 @@ function App() {
                 <Box>{row.amount}</Box>
                 <Box>{row.protein}</Box>
                 <Box>{row.storage}</Box>
+                <button onClick={() => {delee(row.id)}}>delete</button>
               </TableRow>
             ))}
           </TableBody>
