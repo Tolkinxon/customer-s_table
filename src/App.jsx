@@ -26,7 +26,7 @@ function App() {
 
     setIncr((prev) => prev + 1)
 
-    fetch('http://localhost:8000/item', {
+    fetch('http://localhost:3001/item', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function App() {
   
     setIncr((prev) => prev + 1)
 
-    fetch(`http://localhost:8000/item/${id}`, {
+    fetch(`http://localhost:3001/item/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -68,7 +68,7 @@ function App() {
   const delee = (id) => {
     setIncr((prev) => prev + 1)
 
-    fetch(`http://localhost:8000/item/${id}`, {
+    fetch(`http://localhost:3001/item/${id}`, {
       method: 'DELETE',
     })
   }
@@ -83,11 +83,11 @@ function App() {
   useEffect(() => {
 
     
-      fetch('http://localhost:8000/item')
+      fetch('http://localhost:3001/item')
       .then((data) => data.json())
       .then((data) => setData(data))
 
-      fetch('http://localhost:8000/item')
+      fetch('http://localhost:3001/item')
       .then((data) => data.json())
       .then((data) => setData(data))
  
@@ -101,7 +101,7 @@ function App() {
   useEffect(() => {
 
     console.log('render')
-    fetch('http://localhost:8000/item')
+    fetch('http://localhost:30001item')
       .then((data) => data.json())
       .then((data) => setData(data))
   }, [])
