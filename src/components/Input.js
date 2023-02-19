@@ -52,7 +52,7 @@ export default function Input({ setData, editDataBase, editData }) {
       </div>
 
       <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
-        edit
+        savec
       </button>
       <button onClick={() => setData(name, amount, protein, storage)}>
         send
