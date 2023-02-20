@@ -10,8 +10,6 @@ import { useContext } from 'react'
 import { items } from '../reducer/provider'
 
 function Main() {
-  const [data, setData] = useState([])
-  const [incr, setIncr] = useState(0)
   const [editData, setEditData] = useState({
     name: '',
     amount: '',
@@ -19,26 +17,24 @@ function Main() {
     storage: '',
   })
 
+  const { setData, data, setIncr, incr } = useContext(items)
 
-  const state = useContext(items)
 
-  console.log(state);
-
+  
 
   // ******** CREATE DATA BASE *********************
-  const handleSubmit = (name, amount, protein, storage) => {
-    const bodyData = { name, amount, protein, storage }
+  // const handleSubmit = (name, amount, protein, storage) => {
+  //   const bodyData = { name, amount, protein, storage }
+  //   setIncr()
+  //   fetch('http://localhost:3001/item', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(bodyData),
+  //   })
+  // }
 
-    setIncr((prev) => prev + 1)
-
-    fetch('http://localhost:3001/item', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(bodyData),
-    })
-  }
 
 
 
@@ -48,7 +44,7 @@ function Main() {
   }
 
   const editDataBase = (data, id) => {
-    setIncr((prev) => prev + 1)
+    setIncr()
 
     fetch(`http://localhost:3001/item/${id}`, {
       method: 'PUT',
@@ -59,7 +55,7 @@ function Main() {
 
   // ***************** DELETE DATA BASE *****************
   const delee = (id) => {
-    setIncr((prev) => prev + 1)
+    setIncr()
 
     fetch(`http://localhost:3001/item/${id}`, {
       method: 'DELETE',
@@ -86,12 +82,11 @@ function Main() {
 
   return (
     <>
-
       <div className="App">
         <Table>
           <TableHead>
             <div className="hrow">
-              <Box  className='id'>ID</Box>
+              <Box className="id">ID</Box>
               <Box>Products</Box>
               <Box>Amount of products</Box>
               <Box>Protein</Box>
@@ -101,7 +96,7 @@ function Main() {
           <TableBody>
             {data.map((row, idx) => (
               <TableRow key={row.id} id={idx}>
-                <Box className='id'>{idx + 1}</Box>
+                <Box className="id">{idx + 1}</Box>
                 <Box>{row.name}</Box>
                 <Box>{row.amount}</Box>
                 <Box>{row.protein}</Box>
@@ -117,7 +112,7 @@ function Main() {
                   onClick={() => {
                     delee(row.id)
                   }}
-                  className='btn'
+                  className="btn"
                 >
                   delete
                 </button>

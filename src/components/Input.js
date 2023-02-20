@@ -25,12 +25,12 @@ export default function Input({ setData, editDataBase, editData }) {
   }, [setData])
 
 
-  useEffect(() => {
-    setName(editData.name)
-    setAmount(editData.amount)
-    setProtein(editData.protein)
-    setStorage(editData.storage)
-  }, [editData])
+  // useEffect(() => {
+  //   setName(editData.name)
+  //   setAmount(editData.amount)
+  //   setProtein(editData.protein)
+  //   setStorage(editData.storage)
+  // }, [editData])
 
   return (
     <div className="input">
@@ -51,9 +51,9 @@ export default function Input({ setData, editDataBase, editData }) {
         <input name="storage" type="text" value={storage} onChange={datas} />
       </div>
 
-      <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
+      {/* <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
         save
-      </button>
+      </button> */}
       <button onClick={() => setData(name, amount, protein, storage)}>
         send
       </button>
