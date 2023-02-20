@@ -6,6 +6,8 @@ import TableRow from '../components/TableRow'
 import Box from '../components/Box'
 import '../App.css'
 import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { items } from '../reducer/provider'
 
 function Main() {
   const [data, setData] = useState([])
@@ -17,6 +19,10 @@ function Main() {
     storage: '',
   })
 
+
+  const state = useContext(items)
+
+  console.log(state);
 
 
   // ******** CREATE DATA BASE *********************
@@ -34,7 +40,7 @@ function Main() {
     })
   }
 
-  
+
 
   // ****************** EDIT DATA BASE ****************
   const edit = function (name, amount, protein, storage, id) {
@@ -73,7 +79,7 @@ function Main() {
 
   useEffect(() => {
     console.log('render')
-    fetch('http://localhost:30001item')
+    fetch('http://localhost:3001/item')
       .then((data) => data.json())
       .then((data) => setData(data))
   }, [])
