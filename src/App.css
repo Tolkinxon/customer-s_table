@@ -76,4 +76,22 @@
   font-weight: 700px;
 }
 
-/********* ADD COMPONENT INPUTS *******/
+/********* ADD COMPONENT'S INPUTS *******/
+
+/********* EDIT COMPONENT'S BUTTON *******/
+
+.edit {
+  background-color: #006064;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.link-edit {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+
+}
+
+/********* EDIT COMPONENT'S BUTTON *******/

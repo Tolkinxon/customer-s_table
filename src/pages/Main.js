@@ -125,8 +125,8 @@ function Main() {
         <Input
         setData={handleSubmit}
       />
-      <button>
-        <Link to={`/edit`}>
+      <button className='edit'>
+        <Link to={`/edit`} className='link-edit'>
             edit data
         </Link>
       </button>
