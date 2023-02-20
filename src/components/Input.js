@@ -6,7 +6,7 @@ import TableHead from './TableHead'
 import TableBody from './TableBody'
 import TableRow from './TableRow'
 import Box from './Box'
-import Table from './Table'
+
 
 export default function Input({ setData }) {
   const [name, setName] = useState('')
