@@ -70,7 +70,10 @@
   outline: none;
   border: none;
   background-color: #eeeeee;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #90a4ae;
+  color: #90a4ae;
+  font-size: 20px;
+  font-weight: 700px;
 }
 
 /********* ADD COMPONENT INPUTS *******/

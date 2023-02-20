@@ -8,6 +8,7 @@ import '../App.css'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { items } from '../reducer/provider'
+import { Link } from 'react-router-dom'
 
 function Main() {
   const [editData, setEditData] = useState({
@@ -120,10 +121,15 @@ function Main() {
             ))}
           </TableBody>
         </Table>
-        
+
         <Input
         setData={handleSubmit}
       />
+      <button>
+        <Link to={`/edit`}>
+            edit data
+        </Link>
+      </button>
 
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Main from './pages/Main'
-import Add from './pages/Add'
+import Edit from './pages/Edit'
 import { Switch, Route } from 'react-router-dom'
 import Wrapper from './reducer/provider'
 
@@ -10,7 +10,7 @@ const App = () => {
       <Switch>
         <Wrapper>
           <Route exact path='/' component={Main}/>
-          <Route path='/add' component={Add}/>
+          <Route path='/edit' component={Edit}/>
         </Wrapper>
       </Switch>
     

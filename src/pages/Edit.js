@@ -1,23 +1,14 @@
 import React from 'react'
-import Input from '../components/Input'
 import { useContext } from 'react'
 import { items } from '../reducer/provider'
 
-
-const Add = () => {
-
-  const { handleSubmit } = useContext(items)
-
-
-
-
-
+const Edit = () => {
   return (
     <div>
-
-
+      <h1>hello world</h1>
+      
     </div>
   )
 }
 
-export default Add
+export default Edit
