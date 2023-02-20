@@ -24,7 +24,7 @@ const Wrapper = ({children}) => {
     }
     value.handleSubmit = (name, amount, protein, storage) => {
         const bodyData = { name, amount, protein, storage }
-        // setIncr()
+       
         fetch('http://localhost:3001/item', {
           method: 'POST',
           headers: {

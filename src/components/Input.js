@@ -1,11 +1,20 @@
 import '../App.css'
 import { useState, useEffect } from 'react'
+import { useContext } from 'react'
+import { items } from '../reducer/provider'
+import TableHead from './TableHead'
+import TableBody from './TableBody'
+import TableRow from './TableRow'
+import Box from './Box'
+import Table from './Table'
 
-export default function Input({ setData, editDataBase, editData }) {
+export default function Input({ setData }) {
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [protein, setProtein] = useState('')
   const [storage, setStorage] = useState('')
+
+  const { incr, setIncr } = useContext(items)
 
   const datas = (e) => {
     e.target.name == 'name'
@@ -22,41 +31,62 @@ export default function Input({ setData, editDataBase, editData }) {
     setAmount('')
     setProtein('')
     setStorage('')
-  }, [setData])
-
-
-  // useEffect(() => {
-  //   setName(editData.name)
-  //   setAmount(editData.amount)
-  //   setProtein(editData.protein)
-  //   setStorage(editData.storage)
-  // }, [editData])
+  }, [incr])
 
   return (
-    <div className="input">
-      <div>
-        <h4>Product</h4>
-        <input name="name" type="text" value={name} onChange={datas} />
-      </div>
-      <div>
-        <h4>Amount of product</h4>
-        <input name="amount" type="text" value={amount} onChange={datas} />
-      </div>
-      <div>
-        <h4>Protein</h4>
-        <input name="protein" type="text" value={protein} onChange={datas} />
-      </div>
-      <div>
-        <h4>Period of storage</h4>
-        <input name="storage" type="text" value={storage} onChange={datas} />
-      </div>
-
-      {/* <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
-        save
-      </button> */}
-      <button onClick={() => setData(name, amount, protein, storage)}>
-        send
-      </button>
+    <>
+      <div className='table2'>
+        <TableHead>
+          <div className="hrow">
+            <Box></Box>
+            <Box>Products</Box>
+            <Box>Amount of products</Box>
+            <Box>Protein</Box>
+            <Box>Period of storage</Box>
+          </div>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <Box> </Box>
+            <Box>
+              <input name="name" type="text" value={name} onChange={datas} />
+            </Box>
+            <Box>
+              <input
+                name="amount"
+                type="text"
+                value={amount}
+                onChange={datas}
+              />
+            </Box>
+            <Box>
+              <input
+                name="protein"
+                type="text"
+                value={protein}
+                onChange={datas}
+              />
+            </Box>
+            <Box>
+              <input
+                name="storage"
+                type="text"
+                value={storage}
+                onChange={datas}
+              />
+            </Box>
+            <button
+              onClick={() => {
+                setData(name, amount, protein, storage)
+                setIncr()
+              }}
+            >
+              add
+            </button>
+          </TableRow>
+        </TableBody>
     </div>
+    </>
+
   )
 }

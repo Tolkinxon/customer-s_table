@@ -14,11 +14,6 @@ const Add = () => {
 
   return (
     <div>
-           <Input
-        setData={handleSubmit}
-        // editDataBase={editDataBase}
-        // editData={editData}
-      />
 
 
     </div>

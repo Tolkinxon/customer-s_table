@@ -17,10 +17,10 @@ function Main() {
     storage: '',
   })
 
-  const { setData, data, setIncr, incr } = useContext(items)
+  const { setData, data, setIncr, incr,  handleSubmit } = useContext(items)
 
 
-  
+
 
   // ******** CREATE DATA BASE *********************
   // const handleSubmit = (name, amount, protein, storage) => {
@@ -120,6 +120,11 @@ function Main() {
             ))}
           </TableBody>
         </Table>
+        
+        <Input
+        setData={handleSubmit}
+      />
+
       </div>
     </>
   )
