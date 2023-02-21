@@ -24,13 +24,6 @@ export default function Input2({ item, id, keyy }) {
       : setStorage(e.target.value)
   }
 
-  // useEffect(() => {
-  //   setName(item.name)
-  //   setAmount(item.amount)
-  //   setProtein(item.protein)
-  //   setStorage(item.storage)
-  // }, [])
-
 
 
 

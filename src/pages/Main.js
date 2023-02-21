@@ -11,39 +11,10 @@ import { items } from '../reducer/provider'
 import { Link } from 'react-router-dom'
 
 function Main() {
-  // const [editData, setEditData] = useState({
-  //   name: '',
-  //   amount: '',
-  //   protein: '',
-  //   storage: '',
-  // })
 
-  const { setData, data, setIncr, incr,  handleSubmit } = useContext(items)
+  const { setData, data,  incr,  handleSubmit, delee } = useContext(items)
 
 
-
-
-
-  // ****************** EDIT DATA BASE ****************
-  // const edit = function (name, amount, protein, storage, id) {
-  //   setEditData({ name, amount, protein, storage, id })
-  // }
-
-
-
-
-
-
-
-
-  // ***************** DELETE DATA BASE *****************
-  const delee = (id) => {
-    setIncr()
-
-    fetch(`http://localhost:3001/item/${id}`, {
-      method: 'DELETE',
-    })
-  }
 
   // ***************** GET REQUEST ****************
   useEffect(() => {
@@ -55,6 +26,8 @@ function Main() {
       .then((data) => data.json())
       .then((data) => setData(data))
   }, [incr])
+
+
 
   useEffect(() => {
     console.log('render')

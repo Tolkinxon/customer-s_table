@@ -53,7 +53,7 @@ export default function Input({ setData }) {
                 name="name" 
                 type="text" 
                 value={name} 
-                placeholder='Products'
+                placeholder='products'
                 onChange={datas} />
             </Box>
             <Box>
@@ -61,7 +61,7 @@ export default function Input({ setData }) {
                 name="amount"
                 type="text"
                 value={amount}
-                placeholder='Amount of products'
+                placeholder='amount of products'
                 onChange={datas}
               />
             </Box>
@@ -70,7 +70,7 @@ export default function Input({ setData }) {
                 name="protein"
                 type="text"
                 value={protein}
-                placeholder='Protein'
+                placeholder='protein'
                 onChange={datas}
               />
             </Box>
@@ -79,7 +79,7 @@ export default function Input({ setData }) {
                 name="storage"
                 type="text"
                 value={storage}
-                placeholder='Period of storage'
+                placeholder='period of storage'
                 onChange={datas}
               />
             </Box>

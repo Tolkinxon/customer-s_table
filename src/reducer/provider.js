@@ -46,6 +46,13 @@ const Wrapper = ({children}) => {
     value.setSave = () => {
       dispatch({type: 'SAVE'})
     }
+    value.delee = (id) => {
+     dispatch({type: 'INCR'})
+  
+      fetch(`http://localhost:3001/item/${id}`, {
+        method: 'DELETE',
+      })
+    }
 
 
     return( 
