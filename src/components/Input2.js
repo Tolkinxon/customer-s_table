@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom'
 export default function Input2({ item, id, keyy }) {
   const { editDataBase, save } = useContext(items)
 
-  const [name, setName] = useState('')
-  const [amount, setAmount] = useState('')
-  const [protein, setProtein] = useState('')
-  const [storage, setStorage] = useState('')
+  const [name, setName] = useState(item.name)
+  const [amount, setAmount] = useState(item.name)
+  const [protein, setProtein] = useState(item.protein)
+  const [storage, setStorage] = useState(item.storage)
 
   const datas = (e) => {
     e.target.name == 'name'
@@ -24,18 +24,19 @@ export default function Input2({ item, id, keyy }) {
       : setStorage(e.target.value)
   }
 
-  useEffect(() => {
-    setName(item.name)
-    setAmount(item.amount)
-    setProtein(item.protein)
-    setStorage(item.storage)
-  }, [])
+  // useEffect(() => {
+  //   setName(item.name)
+  //   setAmount(item.amount)
+  //   setProtein(item.protein)
+  //   setStorage(item.storage)
+  // }, [])
 
 
 
 
   useEffect(()=> {
     editDataBase({ name, amount, protein, storage }, keyy)
+    console.log('save');
   }, [save])
  
 
