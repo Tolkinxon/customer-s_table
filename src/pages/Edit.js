@@ -8,24 +8,18 @@ import TableRow from '../components/TableRow'
 import Box from '../components/Box'
 import '../App.css'
 import { useState, useEffect } from 'react'
+import Input2 from '../components/Input2'
 
 const Edit = () => {
-  const [name, setName] = useState('')
-  const [amount, setAmount] = useState('')
-  const [protein, setProtein] = useState('')
-  const [storage, setStorage] = useState('')
-
-  const datas = (e) => {
-    e.target.name == 'name'
-      ? setName(e.target.value)
-      : e.target.name == 'amount'
-      ? setAmount(e.target.value)
-      : e.target.name == 'protein'
-      ? setProtein(e.target.value)
-      : setStorage(e.target.value)
-  }
-
   const { data } = useContext(items)
+  const [data2, setData2] = useState([])
+
+  useEffect(() => {
+    setData2(data)
+  }, [])
+
+
+
   return (
     <div>
       <Table>
@@ -39,22 +33,14 @@ const Edit = () => {
           </div>
         </TableHead>
         <TableBody>
-          {data.map((row, idx) => (
-            <TableRow key={row.id} id={idx}>
-              <Box className="id">{idx + 1}</Box>
-              <Box>
-                <input name="name" type="text" value={name} onChange={datas} />
-
-              </Box>
-              <Box>{row.amount}</Box>
-              <Box>{row.protein}</Box>
-              <Box>{row.storage}</Box>
-            </TableRow>
+          {data2.map((row, idx) => (
+              <Input2 item={row} id={idx} key={row.id}/>
           ))}
         </TableBody>
       </Table>
     </div>
   )
 }
+
 
 export default Edit

@@ -1,39 +1,25 @@
 {
   "item": [
     {
-      "name": "fad",
-      "amount": "fadf",
-      "protein": "fadf",
-      "storage": "fadsfdsa",
+      "name": "soliyev",
+      "amount": "tolkinxon",
+      "protein": "",
+      "storage": "",
+      "id": 1
+    },
+    {
+      "name": "urolov",
+      "amount": "abdulvoris",
+      "protein": "",
+      "storage": "",
       "id": 2
     },
     {
-      "name": "fasdf",
-      "amount": "fadsfasd",
-      "protein": "fdasfd",
-      "storage": "fdfa",
-      "id": 3
-    },
-    {
-      "name": "fasdf",
-      "amount": "fadsfasd",
-      "protein": "fdasfd",
-      "storage": "fdfa",
-      "id": 4
-    },
-    {
-      "name": "fasdf",
-      "amount": "fadsfasd",
-      "protein": "fdasfd",
-      "storage": "fdfa",
-      "id": 5
-    },
-    {
-      "name": "",
-      "amount": "",
+      "name": "anarbayev",
+      "amount": "azamat",
       "protein": "",
       "storage": "",
-      "id": 6
+      "id": 3
     }
   ]
 }

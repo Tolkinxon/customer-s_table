@@ -1,7 +1,9 @@
 import '../App.css'
 import { useState, useEffect } from 'react'
+import Box from './Box'
+import TableRow from './TableRow'
 
-export default function Input2({ setData, editDataBase, editData }) {
+export default function Input2({ item, id }) {
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [protein, setProtein] = useState('')
@@ -18,45 +20,61 @@ export default function Input2({ setData, editDataBase, editData }) {
   }
 
   useEffect(() => {
-    setName('')
-    setAmount('')
-    setProtein('')
-    setStorage('')
-  }, [setData])
+    setName(item.name)
+    setAmount(item.amount)
+    setProtein(item.protein)
+    setStorage(item.storage)
+  }, [item])
 
 
-  // useEffect(() => {
-  //   setName(editData.name)
-  //   setAmount(editData.amount)
-  //   setProtein(editData.protein)
-  //   setStorage(editData.storage)
-  // }, [editData])
+  if(id % 2 == 1){
+    id = 1
+  }
+  else{
+    id = 0
+  }  
 
   return (
-    <div className="input">
-      <div>
-        <h4>Product</h4>
-        <input name="name" type="text" value={name} onChange={datas} />
-      </div>
-      <div>
-        <h4>Amount of product</h4>
-        <input name="amount" type="text" value={amount} onChange={datas} />
-      </div>
-      <div>
-        <h4>Protein</h4>
-        <input name="protein" type="text" value={protein} onChange={datas} />
-      </div>
-      <div>
-        <h4>Period of storage</h4>
-        <input name="storage" type="text" value={storage} onChange={datas} />
-      </div>
+    <TableRow key={id} id={id}>
+      <Box>{id + 1}</Box>
+      <Box>
+        <input 
+          name="name" 
+          type="text"
+          value={name} 
+          onChange={datas} className="inp"    
+          style={{ backgroundColor: id === 0 ? '#eeeeee ' : 'white' }}/>
+      </Box>
+      <Box>
+        <input 
+          name="amount" 
+          type="text" value={amount} 
+          onChange={datas}  className="inp"  
+          style={{ backgroundColor: id === 0 ? '#eeeeee ' : 'white' }}/>
+      </Box>
+      <Box>
+        <input 
+          name="protein" 
+          type="text" 
+          value={protein} 
+          onChange={datas}  
+          className="inp"  
+          style={{ backgroundColor: id === 0 ? '#eeeeee ' : 'white' }}/>
+      </Box>
+      <Box>
+        <input 
+          name="storage" 
+          type="text" 
+          value={storage} 
+          onChange={datas}  
+          className="inp"  
+          style={{ backgroundColor: id === 0 ? '#eeeeee ' : 'white' }}/>
+      </Box>
+      <div className='spare'></div>
 
-      {/* <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
+      <button onClick={() => editDataBase({ name, amount, protein, storage }, editData.id)}>
         save
-      </button> */}
-      <button onClick={() => setData(name, amount, protein, storage)}>
-        send
-      </button>
-    </div>
+      </button> 
+    </TableRow>
   )
 }

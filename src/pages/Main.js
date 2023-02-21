@@ -23,21 +23,6 @@ function Main() {
 
 
 
-  // ******** CREATE DATA BASE *********************
-  // const handleSubmit = (name, amount, protein, storage) => {
-  //   const bodyData = { name, amount, protein, storage }
-  //   setIncr()
-  //   fetch('http://localhost:3001/item', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(bodyData),
-  //   })
-  // }
-
-
-
 
   // ****************** EDIT DATA BASE ****************
   const edit = function (name, amount, protein, storage, id) {
@@ -53,6 +38,11 @@ function Main() {
       body: JSON.stringify(data),
     })
   }
+
+
+
+  
+
 
   // ***************** DELETE DATA BASE *****************
   const delee = (id) => {
@@ -102,13 +92,6 @@ function Main() {
                 <Box>{row.amount}</Box>
                 <Box>{row.protein}</Box>
                 <Box>{row.storage}</Box>
-                {/* <button
-                  onClick={() => {
-                    edit(row.name, row.amount, row.protein, row.storage, row.id)
-                  }}
-                >
-                  edit
-                </button> */}
                 <button
                   onClick={() => {
                     delee(row.id)
