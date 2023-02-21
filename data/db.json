@@ -1,25 +1,11 @@
 {
   "item": [
     {
-      "name": "soliyev",
-      "amount": "tolkinxon",
+      "name": "",
+      "amount": "",
       "protein": "",
       "storage": "",
-      "id": 1
-    },
-    {
-      "name": "urolov",
-      "amount": "abdulvoris",
-      "protein": "",
-      "storage": "",
-      "id": 2
-    },
-    {
-      "name": "anarbayev",
-      "amount": "azamat",
-      "protein": "",
-      "storage": "",
-      "id": 3
+      "id": 4
     }
   ]
 }

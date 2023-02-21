@@ -15,6 +15,11 @@ const reducer = (state, action) => {
                 ...state,
                 incr: !state.incr
             }
+        case 'SAVE':
+            return{
+                ...state,
+                save: !state.save
+            }
         default:
             return state
     }

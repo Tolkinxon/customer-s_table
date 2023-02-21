@@ -11,12 +11,12 @@ import { items } from '../reducer/provider'
 import { Link } from 'react-router-dom'
 
 function Main() {
-  const [editData, setEditData] = useState({
-    name: '',
-    amount: '',
-    protein: '',
-    storage: '',
-  })
+  // const [editData, setEditData] = useState({
+  //   name: '',
+  //   amount: '',
+  //   protein: '',
+  //   storage: '',
+  // })
 
   const { setData, data, setIncr, incr,  handleSubmit } = useContext(items)
 
@@ -25,23 +25,15 @@ function Main() {
 
 
   // ****************** EDIT DATA BASE ****************
-  const edit = function (name, amount, protein, storage, id) {
-    setEditData({ name, amount, protein, storage, id })
-  }
-
-  const editDataBase = (data, id) => {
-    setIncr()
-
-    fetch(`http://localhost:3001/item/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-  }
+  // const edit = function (name, amount, protein, storage, id) {
+  //   setEditData({ name, amount, protein, storage, id })
+  // }
 
 
 
-  
+
+
+
 
 
   // ***************** DELETE DATA BASE *****************
@@ -108,12 +100,11 @@ function Main() {
         <Input
         setData={handleSubmit}
       />
-      <button className='edit'>
-        <Link to={`/edit`} className='link-edit'>
-            edit data
-        </Link>
-      </button>
-
+      <Link to={`/edit`} className='link-edit'>
+        <button className='edit'>
+              edit data
+        </button>
+      </Link>
       </div>
     </>
   )

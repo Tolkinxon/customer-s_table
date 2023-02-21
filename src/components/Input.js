@@ -49,13 +49,19 @@ export default function Input({ setData }) {
           <TableRow>
             <Box> </Box>
             <Box>
-              <input name="name" type="text" value={name} onChange={datas} />
+              <input 
+                name="name" 
+                type="text" 
+                value={name} 
+                placeholder='Products'
+                onChange={datas} />
             </Box>
             <Box>
               <input
                 name="amount"
                 type="text"
                 value={amount}
+                placeholder='Amount of products'
                 onChange={datas}
               />
             </Box>
@@ -64,6 +70,7 @@ export default function Input({ setData }) {
                 name="protein"
                 type="text"
                 value={protein}
+                placeholder='Protein'
                 onChange={datas}
               />
             </Box>
@@ -72,6 +79,7 @@ export default function Input({ setData }) {
                 name="storage"
                 type="text"
                 value={storage}
+                placeholder='Period of storage'
                 onChange={datas}
               />
             </Box>

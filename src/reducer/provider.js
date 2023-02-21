@@ -8,7 +8,8 @@ export const items = createContext()
 
 const initialState = {
     data: [],
-    incr: true
+    incr: true,
+    save: true
 }
 
 
@@ -33,6 +34,18 @@ const Wrapper = ({children}) => {
           body: JSON.stringify(bodyData),
         })
       }
+
+    value.editDataBase = (data, id) => {
+  
+      fetch(`http://localhost:3001/item/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+    }
+    value.setSave = () => {
+      dispatch({type: 'SAVE'})
+    }
 
 
     return( 
